@@ -1,0 +1,71 @@
+[33mcommit 37474174648bcc12d1f31eaf82a8839ae38cc5dd[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Ayushman <Asus@DESKTOP-3RK8C8O.(none)>
+Date:   Tue Apr 26 16:28:56 2022 +0530
+
+    Making now Authentication Sign in and Sign Up Preparing Componenst and UI by using @material-ui/cors
+
+[33mcommit 05d3014a3fcaaf744af9e6a753f1fd05c176563d[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Ayushman <Asus@DESKTOP-3RK8C8O.(none)>
+Date:   Sun Apr 24 18:21:08 2022 +0530
+
+    Finished! Ready To Deploy!
+
+[33mcommit 20b024b5e02feef48cf0a0e0bda4ffb590725321[m
+Author: Ayushman <Asus@DESKTOP-3RK8C8O.(none)>
+Date:   Sun Apr 24 01:05:45 2022 +0530
+
+    make it better!
+
+[33mcommit 2ca329cd397d1a9f9c279a7c3cdf27eb09243f0e[m
+Author: Ayushman <Asus@DESKTOP-3RK8C8O.(none)>
+Date:   Sun Apr 24 00:49:09 2022 +0530
+
+    add node_modules to gitignore
+
+[33mcommit eee766eedca89e2ba3d292e82ec731243352d3b6[m
+Author: Ayushman <Asus@DESKTOP-3RK8C8O.(none)>
+Date:   Sun Apr 24 00:12:51 2022 +0530
+
+    Add gitignore file!
+
+[33mcommit c4a4fb03dbe8d83a295bb9cc0a24a7b653eebd54[m
+Author: Ayushman <Asus@DESKTOP-3RK8C8O.(none)>
+Date:   Sat Apr 23 18:47:02 2022 +0530
+
+    Added Like Functionality  and Improve UI of POST and For Mobile Devices and set Up and ENVIRONMENT variables .env file before deplyment and last thing declare constants file for action types!
+
+[33mcommit d6308ef1c08ca33798d261b24874a2c950fef3ec[m
+Author: Ayushman <Asus@DESKTOP-3RK8C8O.(none)>
+Date:   Sat Apr 23 00:47:25 2022 +0530
+
+    We can now Delete the Posts
+
+[33mcommit 4d5ac12e31af221704fcb3a36ee9d7cbc786947a[m
+Author: Ayushman <Asus@DESKTOP-3RK8C8O.(none)>
+Date:   Fri Apr 22 23:43:19 2022 +0530
+
+    Make controller and router of updatePost and populate data in the form if we press three dots icon-MoreHorizIcon and Update the Post if we ant
+
+[33mcommit 32b05fc2ab87f62d3871a7ffcd655b31c74d089f[m
+Author: Ayushman <Asus@DESKTOP-3RK8C8O.(none)>
+Date:   Fri Apr 22 00:56:04 2022 +0530
+
+    Successfully sent post request to our backend server and store  that posts in the DB!
+
+[33mcommit 0d193bd3f51b45be2d5705cf3137ebe491ada6ce[m
+Author: Ayushman <Asus@DESKTOP-3RK8C8O.(none)>
+Date:   Thu Apr 21 23:42:22 2022 +0530
+
+    we connect our frontend with backend through an api call and working in client making from for post and send that data to DB
+
+[33mcommit 2bfdbe407ba647d22b9be34d5421bcab2ccbc63e[m
+Author: Ayushman <Asus@DESKTOP-3RK8C8O.(none)>
+Date:   Wed Apr 20 18:47:14 2022 +0530
+
+    Working in Front End Define Structure of Componenets Form and Posts Set up router at server side createpost and getPosts
+
+[33mcommit b66c8c6fee8e00209097c62dd3225a5e73b42755[m
+Author: Ayushman <Asus@DESKTOP-3RK8C8O.(none)>
+Date:   Wed Apr 20 17:47:08 2022 +0530
+
+    Initialize both client and server and our server is connected with DB (using MongoDB Atlas (cloud))  define routes controllers models too
