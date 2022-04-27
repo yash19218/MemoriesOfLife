@@ -1,5 +1,5 @@
 import React  , {useState}from 'react'
-import {Avatar,Paper,Button,Grid,Typography,Container,TextField} from '@material-ui/core';
+import {Avatar,Paper,Button,Grid,Typography,Container} from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import {GoogleLogin} from 'react-google-login';
 import {useDispatch} from 'react-redux';
@@ -56,7 +56,7 @@ const Auth = () => {
 
     const switchMode = () => {
         setisSignup((previsSignup)=>!previsSignup);
-        handleShowPassword(false);
+        setShowPassword(false);
     }
 
     return (

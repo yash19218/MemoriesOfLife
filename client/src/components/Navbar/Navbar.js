@@ -3,6 +3,7 @@ import {AppBar , Avatar, Button, Toolbar, Typography} from '@material-ui/core';
 import {Link} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import { useHistory , useLocation} from 'react-router-dom';
+import decode from 'jwt-decode';
 
 import useStyles from './styles';
 import memories from '../../images/memories.png';
@@ -16,8 +17,12 @@ import memories from '../../images/memories.png';
     
     useEffect(()=>{
         const token = user?.token;
-
-        //JWT...for manually sign up
+        //JWT...expires? check!
+        if(token){
+            const decodedToken = decode(token);//has exp:key
+            if(decodedToken.exp*1000  < new Date().getTime())//in mili sec!
+                logout();
+        }
         setUser(JSON.parse(localStorage.getItem('profile')));
     },[location])
 

@@ -13,8 +13,8 @@ export const getPosts = async (req,res) => {
 export const createPost = async (req,res) =>{
     const post = req.body;
 
-    const newPost = new PostMessage(post);
-    //learn codes https://www.restapitutorial.com/httpstatuscodes.html
+    const newPost = new PostMessage({...post,creater:req.userId,createdAt:new Date().toISOString()});
+    //learn codes https://www.restapitutorial.com/httpstatuscodes.html   
     try{
         await newPost.save();
 
@@ -52,10 +52,23 @@ export const deletePost = async (req,res) =>{
 export const likePost = async (req,res) =>{
     const { id : _id } = req.params;
 
+    if(!req.userId) return res.json({message:'Unauthenticated!'});
+
     if(!mongoose.Types.ObjectId.isValid(_id))
         return res.status(404).send("No Post with this ID");
 
     const post = await PostMessage.findById(_id);
-    const updatedPost = await PostMessage.findByIdAndUpdate(_id,{likeCount:post.likeCount+1},{new:true});
+
+    const index = post.likes.findIndex((id) => id === String(req.userId));
+
+    if(index==-1){
+        // user want to like the particular post!
+        post.likes.push(req.userId);
+    }else{
+        //user want to dislike the post!
+        post.likes = post.likes.filter((id) => id !== String(req.userId));
+    }
+
+    const updatedPost = await PostMessage.findByIdAndUpdate(_id,post,{new:true});
     res.json(updatedPost);
 }

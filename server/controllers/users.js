@@ -1,7 +1,7 @@
 import bycrypt from "bcryptjs";//for hashing passwords(decryption) provide security
 import jwt from "jsonwebtoken";
 
-import User from '../models/user';
+import User from '../models/user.js';
 
 export const signin = async(req,res) =>{
     const {email,password}=req.body;
@@ -10,7 +10,7 @@ export const signin = async(req,res) =>{
         const existingUser = await User.findOne({email});
         if(!existingUser) return res.staus(404).json({message:"User doesn't exist!"});
         const isPasswordCorrect = await bycrypt.compare(password,existingUser.password);
-        if(!isPasswordCorrect) return res.staus(404).json({message:"Invalid Username/Password!"});
+        if(!isPasswordCorrect) return res.status(404).json({message:"Invalid Username/Password!"});
         
         const token = jwt.sign({email:existingUser.email,id:existingUser._id},'test',{expiresIn:"1h"});
 
@@ -27,10 +27,10 @@ export const signup = async(req,res) =>{
     try{
         const existingUser = await User.findOne({email});
 
-        if(existingUser) return res.staus(404).json({message:"User already exist!"});
+        if(existingUser) return res.status(404).json({message:"User already exist!"});
 
         if(password!==confirmPassword)
-            return res.staus(404).json({message:"Password doesn't Match!"});
+            return res.status(404).json({message:"Password doesn't Match!"});
 
         const hashedPassword = await bycrypt.hash(password,12);
 
