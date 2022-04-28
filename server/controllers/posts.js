@@ -13,7 +13,7 @@ export const getPosts = async (req,res) => {
 export const createPost = async (req,res) =>{
     const post = req.body;
 
-    const newPost = new PostMessage({...post,creater:req.userId,createdAt:new Date().toISOString()});
+    const newPost = new PostMessage({...post,creator:req.userId,createdAt:new Date().toISOString()});
     //learn codes https://www.restapitutorial.com/httpstatuscodes.html   
     try{
         await newPost.save();
